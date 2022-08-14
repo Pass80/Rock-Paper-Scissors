@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url('../pics-game/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+header {
+    font-size: 4rem;
+    padding-top: 3rem;
+    color: white;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 25vw;
+    height: 40vh;
+    background: url('../pics-game/rock-main.jpg');
+    background-position: center;
+    background-size: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.image-container2 {
+    width: 25vw;
+    height: 50vh;
+    background: url('../pics-game/scissors-main.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+article p:last-of-type {
+    padding-top: 3rem;
+}
+
+p {
+    padding: 0.5rem 0 1rem;
+}
+
+.last-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-btns {
+    display: flex;
+    padding-top: 1rem;
+    justify-content: center;
+}
+
+.select-btns img {
+    width: 15%;
+}
+
+.select-btns img:active {
+    position: relative;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+footer img {
+    width: 70%;
+    height: 20vh;
+}
