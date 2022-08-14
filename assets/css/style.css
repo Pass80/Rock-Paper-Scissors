@@ -34,10 +34,11 @@ article {
 
 .image-container {
     width: 25vw;
-    height: 40vh;
-    background: url('../pics-game/rock-main.jpg');
+    height: 50vh;
+    background: url('../pics-game/photo1.gif');
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -45,7 +46,7 @@ article {
 .image-container2 {
     width: 25vw;
     height: 50vh;
-    background: url('../pics-game/scissors-main.jpg');
+    background: url('../pics-game/photo1.gif');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
