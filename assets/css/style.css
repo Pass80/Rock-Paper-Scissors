@@ -54,6 +54,31 @@ article {
     border-radius: 10px;
 }
 
+.rock {
+    background: url('../pics-game/rock-main.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.paper {
+    background: url('../pics-game/paper-main.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.scissors {
+    background: url('../pics-game/scissors-main.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
 article p:last-of-type {
     padding-top: 3rem;
 }
@@ -87,4 +112,14 @@ p {
 footer img {
     width: 70%;
     height: 20vh;
+}
+
+.round-result {
+    width: 20%;
+    font-size: 2rem;
+}
+
+#player-score,
+#computer-score {
+    font-size: 2.5rem;
 }
