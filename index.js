@@ -1,5 +1,5 @@
 const gameOptions = ['rock', 'scissors', 'paper'];
-const STATE_WIN = 'You wins';
+const STATE_WIN = 'You win';
 const STATE_LOSE = 'Computer wins';
 const STATE_DRAW = 'Tie';
 let playerSelection = null;
@@ -15,16 +15,19 @@ const changeComputerClass = document.getElementById('main-image2');
 const computerPlay = () => {
     return gameOptions[Math.floor(Math.random() * 3)];
 };
-
-rockElement.addEventListener('click', () => {
-    document.getElementById('round-result').innerHTML = '';
+// create a function which removes the added classes at every begin of the round
+const removeClasses = () => {
     document.getElementById('main-image').classList.remove('rock');
     document.getElementById('main-image').classList.remove('scissors');
     document.getElementById('main-image').classList.remove('paper');
     document.getElementById('main-image2').classList.remove('scissors');
     document.getElementById('main-image2').classList.remove('paper');
     document.getElementById('main-image2').classList.remove('rock');
+};
 
+rockElement.addEventListener('click', () => {
+    document.getElementById('round-result').innerHTML = '';
+    removeClasses();
     const timeOut = setTimeout(() => {
         document.getElementById('main-image').classList.add('rock');
         document.getElementById('round-result').innerHTML = null;
@@ -51,13 +54,7 @@ rockElement.addEventListener('click', () => {
 });
 paperElement.addEventListener('click', () => {
     document.getElementById('round-result').innerHTML = null;
-    document.getElementById('main-image').classList.remove('paper');
-    document.getElementById('main-image').classList.remove('scissors');
-    document.getElementById('main-image').classList.remove('rock');
-    document.getElementById('main-image2').classList.remove('scissors');
-    document.getElementById('main-image2').classList.remove('paper');
-    document.getElementById('main-image2').classList.remove('rock');
-
+    removeClasses();
     const timeOut = setTimeout(() => {
         document.getElementById('main-image').classList.add('paper');
         document.getElementById('round-result').innerHTML = null;
@@ -83,13 +80,7 @@ paperElement.addEventListener('click', () => {
 });
 scissorsElement.addEventListener('click', () => {
     document.getElementById('round-result').innerHTML = null;
-    document.getElementById('main-image').classList.remove('scissors');
-    document.getElementById('main-image').classList.remove('rock');
-    document.getElementById('main-image').classList.remove('paper');
-    document.getElementById('main-image2').classList.remove('scissors');
-    document.getElementById('main-image2').classList.remove('paper');
-    document.getElementById('main-image2').classList.remove('rock');
-
+    removeClasses();
     const timeOut = setTimeout(() => {
         document.getElementById('main-image').classList.add('scissors');
         document.getElementById('round-result').innerHTML = null;
