@@ -4,104 +4,125 @@ const STATE_LOSE = 'Computer wins';
 const STATE_DRAW = 'Tie';
 let playerSelection = null;
 let computerSelection = null;
-let roundResult = document.getElementById('round-result').innerHTML;
-let playerScore = document.getElementById('player-score').innerHTML;
-let computerScore = document.getElementById('computer-score').innerHTML;
+const roundResult = document.getElementById('round-result');
+const playerScore = document.getElementById('player-score');
+const computerScore = document.getElementById('computer-score');
 const rockElement = document.getElementById('rock');
 const paperElement = document.getElementById('paper');
 const scissorsElement = document.getElementById('scissors');
 const changePlayerClass = document.getElementById('main-image');
 const changeComputerClass = document.getElementById('main-image2');
+const restartBtn = document.getElementById('restart');
+const exitBtn = document.getElementById('exit');
+const gameOverModal = document.querySelector('.game-over-modal');
+const message = document.querySelector('.message');
+const mainImage = document.getElementById('main-image');
+const mainImage2 = document.getElementById('main-image2');
+
+restartBtn.addEventListener('click', () => {
+    removeClasses();
+    gameOverModal.classList.remove('show');
+    message.classList.remove('message');
+    roundResult.innerHTML = '';
+    playerScore.innerHTML = 0;
+    computerScore.innerHTML = 0;
+});
+
+exitBtn.addEventListener('click', () => {
+    window.close();
+});
+
 const computerPlay = () => {
     return gameOptions[Math.floor(Math.random() * 3)];
 };
 // create a function which removes the added classes at every begin of the round
 const removeClasses = () => {
-    document.getElementById('main-image').classList.remove('rock');
-    document.getElementById('main-image').classList.remove('scissors');
-    document.getElementById('main-image').classList.remove('paper');
-    document.getElementById('main-image2').classList.remove('scissors');
-    document.getElementById('main-image2').classList.remove('paper');
-    document.getElementById('main-image2').classList.remove('rock');
+    mainImage.classList.remove('rock');
+    mainImage.classList.remove('scissors');
+    mainImage.classList.remove('paper');
+    mainImage2.classList.remove('scissors');
+    mainImage2.classList.remove('paper');
+    mainImage2.classList.remove('rock');
 };
 
 rockElement.addEventListener('click', () => {
-    document.getElementById('round-result').innerHTML = '';
+    roundResult.innerHTML = '';
     removeClasses();
     const timeOut = setTimeout(() => {
-        document.getElementById('main-image').classList.add('rock');
-        document.getElementById('round-result').innerHTML = null;
+        mainImage.classList.add('rock');
+        roundResult.innerHTML = '';
         playerSelection = gameOptions[0];
         computerSelection = computerPlay();
         if (computerSelection === 'rock') {
-            document.getElementById('main-image2').classList.add('rock');
-            document.getElementById('round-result').innerHTML = STATE_DRAW;
+            mainImage2.classList.add('rock');
+            roundResult.innerHTML = STATE_DRAW;
         }
         if (computerSelection === 'paper') {
-            document.getElementById('main-image2').classList.add('paper');
-            document.getElementById('round-result').innerHTML = STATE_LOSE;
-            document.getElementById('computer-score').innerHTML =
-                +document.getElementById('computer-score').innerHTML + 1;
+            mainImage2.classList.add('paper');
+            roundResult.innerHTML = STATE_LOSE;
+            computerScore.innerHTML = +computerScore.innerHTML + 1;
         }
         if (computerSelection === 'scissors') {
-            document.getElementById('main-image2').classList.add('scissors');
-            document.getElementById('round-result').innerHTML = STATE_WIN;
-            document.getElementById('player-score').innerHTML =
-                +document.getElementById('player-score').innerHTML + 1;
+            mainImage2.classList.add('scissors');
+            roundResult.innerHTML = STATE_WIN;
+            playerScore.innerHTML = +playerScore.innerHTML + 1;
         }
     }, 2000);
+    if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
+        document.querySelector('.game-over-modal').classList.add('show');
+        message.classList.add('message');
+        console.log('hi');
+    }
+
     // clearTimeout(timeOut);
 });
+
 paperElement.addEventListener('click', () => {
-    document.getElementById('round-result').innerHTML = null;
+    roundResult.innerHTML = '';
     removeClasses();
     const timeOut = setTimeout(() => {
-        document.getElementById('main-image').classList.add('paper');
-        document.getElementById('round-result').innerHTML = null;
+        mainImage.classList.add('paper');
+        roundResult.innerHTML = '';
         playerSelection = gameOptions[3];
         computerSelection = computerPlay();
         if (computerSelection === 'paper') {
-            document.getElementById('main-image2').classList.add('paper');
-            document.getElementById('round-result').innerHTML = STATE_DRAW;
+            mainImage2.classList.add('paper');
+            roundResult.innerHTML = STATE_DRAW;
         }
         if (computerSelection === 'scissors') {
-            document.getElementById('main-image2').classList.add('scissors');
-            document.getElementById('round-result').innerHTML = STATE_LOSE;
-            document.getElementById('computer-score').innerHTML =
-                +document.getElementById('computer-score').innerHTML + 1;
+            mainImage2.classList.add('scissors');
+            roundResult.innerHTML = STATE_LOSE;
+            computerScore.innerHTML = +computerScore.innerHTML + 1;
         }
         if (computerSelection === 'rock') {
-            document.getElementById('main-image2').classList.add('rock');
-            document.getElementById('round-result').innerHTML = STATE_WIN;
-            document.getElementById('player-score').innerHTML =
-                +document.getElementById('player-score').innerHTML + 1;
+            mainImage2.classList.add('rock');
+            roundResult.innerHTML = STATE_WIN;
+            playerScore.innerHTML = +playerScore.innerHTML + 1;
         }
     }, 2000);
 });
 scissorsElement.addEventListener('click', () => {
-    document.getElementById('round-result').innerHTML = null;
+    roundResult.innerHTML = '';
     removeClasses();
     const timeOut = setTimeout(() => {
-        document.getElementById('main-image').classList.add('scissors');
-        document.getElementById('round-result').innerHTML = null;
+        mainImage.classList.add('scissors');
+        roundResult.innerHTML = '';
         playerSelection = gameOptions[1];
         computerSelection = computerPlay();
 
         if (computerSelection === 'scissors') {
-            document.getElementById('main-image2').classList.add('scissors');
-            document.getElementById('round-result').innerHTML = STATE_DRAW;
+            mainImage2.classList.add('scissors');
+            roundResult.innerHTML = STATE_DRAW;
         }
         if (computerSelection === 'rock') {
-            document.getElementById('main-image2').classList.add('rock');
-            document.getElementById('round-result').innerHTML = STATE_LOSE;
-            document.getElementById('computer-score').innerHTML =
-                +document.getElementById('computer-score').innerHTML + 1;
+            mainImage2.classList.add('rock');
+            roundResult.innerHTML = STATE_LOSE;
+            computerScore.innerHTML = +computerScore.innerHTML + 1;
         }
         if (computerSelection === 'paper') {
-            document.getElementById('main-image2').classList.add('paper');
-            document.getElementById('round-result').innerHTML = STATE_WIN;
-            document.getElementById('player-score').innerHTML =
-                +document.getElementById('player-score').innerHTML + 1;
+            mainImage2.classList.add('paper');
+            roundResult.innerHTML = STATE_WIN;
+            playerScore.innerHTML = +playerScore.innerHTML + 1;
         }
     }, 2000);
 });
