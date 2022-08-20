@@ -14,15 +14,17 @@ const changePlayerClass = document.getElementById('main-image');
 const changeComputerClass = document.getElementById('main-image2');
 const restartBtn = document.getElementById('restart');
 const exitBtn = document.getElementById('exit');
-const gameOverModal = document.querySelector('.game-over-modal');
-const message = document.querySelector('.message');
+// const message = document.getElementById('modal-content');
 const mainImage = document.getElementById('main-image');
 const mainImage2 = document.getElementById('main-image2');
+const windowMessage = document.getElementById('myModal');
+const finalScore = document.getElementById('finalres');
 
 restartBtn.addEventListener('click', () => {
     removeClasses();
-    gameOverModal.classList.remove('show');
-    message.classList.remove('message');
+    windowMessage.style.display = 'none';
+    // message.classList.remove('message');
+    // hidden.classList.add('hidden');
     roundResult.innerHTML = '';
     playerScore.innerHTML = 0;
     computerScore.innerHTML = 0;
@@ -67,10 +69,11 @@ rockElement.addEventListener('click', () => {
             roundResult.innerHTML = STATE_WIN;
             playerScore.innerHTML = +playerScore.innerHTML + 1;
         }
-    }, 2000);
+    }, 1000);
     if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
-        document.querySelector('.game-over-modal').classList.add('show');
-        message.classList.add('message');
+        windowMessage.style.display = 'block';
+        finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
+
         console.log('hi');
     }
 
@@ -99,7 +102,12 @@ paperElement.addEventListener('click', () => {
             roundResult.innerHTML = STATE_WIN;
             playerScore.innerHTML = +playerScore.innerHTML + 1;
         }
-    }, 2000);
+    }, 1000);
+    if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
+        windowMessage.style.display = 'block';
+        finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
+        console.log('hi');
+    }
 });
 scissorsElement.addEventListener('click', () => {
     roundResult.innerHTML = '';
@@ -124,7 +132,15 @@ scissorsElement.addEventListener('click', () => {
             roundResult.innerHTML = STATE_WIN;
             playerScore.innerHTML = +playerScore.innerHTML + 1;
         }
-    }, 2000);
+    }, 1000);
+    if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
+        windowMessage.style.display = 'block';
+        finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
+        // message.classList.add('message');
+        // hidden.classList.remove('hidden');
+        // showElement();
+        console.log('hi');
+    }
 });
 
 // const playRound = (player1, computer) => {

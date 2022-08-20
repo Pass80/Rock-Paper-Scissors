@@ -9,9 +9,10 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="message-window" class="game-over-modal show">
-            <div class="message">
-                <p>Final Result : 11</p>
+        <div id="myModal" class="modal">
+            <div id="modal-content" class="message">
+                <p>Final Result</p>
+                <p id="finalres"></p>
                 <p id="restart">Restart</p>
                 <p id="exit">Exit</p>
             </div>
@@ -46,7 +47,7 @@
                 </article>
                 <article class="round-result">
                     <h3>VS</h3>
-                    <p id="round-result"></p>
+                    <p id="round-result">&nbsp;</p>
                 </article>
                 <article>
                     <h3>COMPUTER SCORE</h3>
@@ -71,12 +72,6 @@
                     </div>
 
                     <p>Computer pick</p>
-                </article>
-            </section>
-            <section class="last-sec">
-                <article>
-                    <h3>Final Result</h3>
-                    <p></p>
                 </article>
             </section>
         </main>
