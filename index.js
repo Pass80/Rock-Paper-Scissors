@@ -14,7 +14,6 @@ const changePlayerClass = document.getElementById('main-image');
 const changeComputerClass = document.getElementById('main-image2');
 const restartBtn = document.getElementById('restart');
 const exitBtn = document.getElementById('exit');
-// const message = document.getElementById('modal-content');
 const mainImage = document.getElementById('main-image');
 const mainImage2 = document.getElementById('main-image2');
 const windowMessage = document.getElementById('myModal');
@@ -23,8 +22,6 @@ const finalScore = document.getElementById('finalres');
 restartBtn.addEventListener('click', () => {
     removeClasses();
     windowMessage.style.display = 'none';
-    // message.classList.remove('message');
-    // hidden.classList.add('hidden');
     roundResult.innerHTML = '';
     playerScore.innerHTML = 0;
     computerScore.innerHTML = 0;
@@ -33,7 +30,7 @@ restartBtn.addEventListener('click', () => {
 exitBtn.addEventListener('click', () => {
     window.close();
 });
-
+// create a function which makes random selection for the computer
 const computerPlay = () => {
     return gameOptions[Math.floor(Math.random() * 3)];
 };
@@ -52,7 +49,7 @@ rockElement.addEventListener('click', () => {
     removeClasses();
     const timeOut = setTimeout(() => {
         mainImage.classList.add('rock');
-        roundResult.innerHTML = '';
+        // roundResult.innerHTML = '';
         playerSelection = gameOptions[0];
         computerSelection = computerPlay();
         if (computerSelection === 'rock') {
@@ -68,16 +65,17 @@ rockElement.addEventListener('click', () => {
             mainImage2.classList.add('scissors');
             roundResult.innerHTML = STATE_WIN;
             playerScore.innerHTML = +playerScore.innerHTML + 1;
+            if (
+                computerScore.innerHTML === '5' ||
+                playerScore.innerHTML === '5'
+            ) {
+                windowMessage.style.display = 'block';
+                finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
+
+                console.log('hi');
+            }
         }
     }, 1000);
-    if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
-        windowMessage.style.display = 'block';
-        finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
-
-        console.log('hi');
-    }
-
-    // clearTimeout(timeOut);
 });
 
 paperElement.addEventListener('click', () => {
@@ -102,12 +100,12 @@ paperElement.addEventListener('click', () => {
             roundResult.innerHTML = STATE_WIN;
             playerScore.innerHTML = +playerScore.innerHTML + 1;
         }
+        if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
+            windowMessage.style.display = 'block';
+            finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
+            console.log('hi');
+        }
     }, 1000);
-    if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
-        windowMessage.style.display = 'block';
-        finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
-        console.log('hi');
-    }
 });
 scissorsElement.addEventListener('click', () => {
     roundResult.innerHTML = '';
@@ -136,9 +134,6 @@ scissorsElement.addEventListener('click', () => {
     if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
         windowMessage.style.display = 'block';
         finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
-        // message.classList.add('message');
-        // hidden.classList.remove('hidden');
-        // showElement();
         console.log('hi');
     }
 });
