@@ -66,15 +66,12 @@ rockElement.addEventListener('click', () => {
             mainImage2.classList.add('scissors');
             roundResult.innerHTML = STATE_WIN;
             playerScore.innerHTML = +playerScore.innerHTML + 1;
-            if (
-                computerScore.innerHTML === '5' ||
-                playerScore.innerHTML === '5'
-            ) {
-                windowMessage.style.display = 'block';
-                finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
+        }
+        if (computerScore.innerHTML === '5' || playerScore.innerHTML === '5') {
+            windowMessage.style.display = 'block';
+            finalScore.innerHTML = `You ${playerScore.innerHTML} - ${computerScore.innerHTML} Computer `;
 
-                console.log('hi');
-            }
+            console.log('hi');
         }
     }, 1000);
 });
