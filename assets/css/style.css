@@ -4,6 +4,7 @@
     padding: 0;
 }
 body {
+    height: 100vh;
     background: url('../pics-game/wood.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -119,6 +120,12 @@ footer img {
     font-size: 2rem;
 }
 
+.round-result h3,
+.round-result p {
+    height: 4rem;
+    font-size: 2rem;
+}
+
 #player-score,
 #computer-score {
     font-size: 2.5rem;
@@ -149,7 +156,7 @@ footer img {
     padding: 20px;
     border: 1px solid #888;
     border-radius: 1.5rem;
-    width: 30%;
+    width: 40%;
 }
 
 .message p {
