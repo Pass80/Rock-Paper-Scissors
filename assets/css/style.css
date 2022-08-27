@@ -5,7 +5,7 @@
 }
 body {
     height: 100vh;
-    background: url('../pics-game/wood.jpg');
+    background: url('../pics-game/vs.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -37,48 +37,48 @@ article {
 .image-container {
     width: 25vw;
     height: 50vh;
-    background: url('../pics-game/photo1.gif');
+    background: url('../pics-game/photo2.gif');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 0.5rem solid rgb(0, 64, 92);
+    border-radius: 0.5rem;
 }
 
 .image-container2 {
     width: 25vw;
     height: 50vh;
-    background: url('../pics-game/photo1.gif');
+    background: url('../pics-game/photo2.gif');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 0.5rem solid #ffa52e;
+    border-radius: 0.5rem;
 }
 
 .rock {
-    background: url('../pics-game/rock-main.jpg');
+    background: url('../pics-game/rock-main.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid black;
-    border-radius: 10px;
+    /* border: 2px solid black; */
+    border-radius: 0.5rem;
 }
 .paper {
-    background: url('../pics-game/paper-main.jpg');
+    background: url('../pics-game/paper-main.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid black;
-    border-radius: 10px;
+    /* border: 2px solid black; */
+    border-radius: 0.5rem;
 }
 .scissors {
-    background: url('../pics-game/scissors-main.jpg');
+    background: url('../pics-game/scissors-main.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid black;
-    border-radius: 10px;
+    /* border: 2px solid black; */
+    border-radius: 0.5rem;
 }
 
 article p:last-of-type {
@@ -117,13 +117,15 @@ footer img {
 }
 
 .round-result {
+    display: flex;
     width: 20%;
+    justify-content: end;
+    margin-bottom: 14rem;
     font-size: 2rem;
 }
 
 .round-result h3,
 .round-result p {
-    height: 4rem;
     font-size: 2rem;
 }
 
@@ -152,6 +154,7 @@ footer img {
     justify-content: center;
     align-items: center;
     background-color: #fefefe;
+    opacity: 0.5;
     text-align: center;
     margin: auto;
     padding: 20px;
