@@ -5,17 +5,17 @@
 }
 body {
     height: 100vh;
-    background: url('../pics-game/vs.jpg');
+    background: url('../pics-game/versus.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     color: white;
 }
 
-header {
+header h1 {
     font-size: 4rem;
     padding-top: 0rem;
-    color: white;
+    color: rgb(3, 121, 29);
     width: 40%;
     margin: 0 auto;
     text-align: center;
@@ -126,7 +126,9 @@ footer img {
 
 .round-result h3,
 .round-result p {
-    font-size: 2rem;
+    font-size: 3rem;
+    color: rgb(3, 121, 29);
+    font-weight: bold;
 }
 
 #player-score,
@@ -197,4 +199,15 @@ footer img {
 
 .hidden {
     display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer a {
+    text-decoration: none;
+    padding-top: 3rem;
+    color: white;
 }
