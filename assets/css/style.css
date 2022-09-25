@@ -35,7 +35,6 @@ header h1 {
 section {
     width: 100%;
     display: flex;
-    /* padding: 2rem; */
     justify-content: space-between;
     align-items: center;
 }
@@ -74,7 +73,6 @@ article {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* border: 2px solid black; */
     border-radius: 0.5rem;
 }
 .paper {
@@ -82,7 +80,6 @@ article {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* border: 2px solid black; */
     border-radius: 0.5rem;
 }
 .scissors {
@@ -90,17 +87,12 @@ article {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* border: 2px solid black; */
     border-radius: 0.5rem;
 }
 
 article p:last-of-type {
     padding-top: 3rem;
 }
-
-/* p {
-    padding: 0.5rem 0 1rem;
-} */
 
 .last-sec {
     display: flex;
@@ -123,18 +115,6 @@ article p:last-of-type {
     margin-bottom: -3px;
     margin-top: 3px;
 }
-
-/* footer img {
-    width: 70%;
-    height: 20vh;
-} */
-
-/* .round-result {
-    display: flex;
-    width: 20%;
-    justify-content: end;
-    font-size: 2rem;
-} */
 
 .round-result h3,
 .round-result p {
@@ -188,23 +168,6 @@ article p:last-of-type {
     font-size: 1.5rem;
 }
 
-/* Modal Content */
-
-/* The Close Button */
-
-/* Modal Content */
-/* .modal-content {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 1.5rem;
-    width: 30%;
-} */
-
 #restart:hover,
 #exit:hover {
     cursor: pointer;
@@ -223,7 +186,6 @@ footer {
 footer a {
     font-size: 1rem;
     text-decoration: none;
-    /* padding-top: 3rem; */
     color: white;
 }
 
@@ -258,13 +220,9 @@ footer a {
 }
 
 @media only screen and (max-width: 700px) {
-    /* header h1 {
-        font-size: 1.5rem;
+    body {
+        height: fit-content;
     }
-
-    #round-result {
-        font-size: 1.5rem;
-    } */
 
     .image-container {
         width: 14rem;
@@ -278,24 +236,7 @@ footer a {
 }
 
 @media only screen and (max-width: 500px) {
-    /* header h1 {
-        font-size: 1.5rem;
-    }
-
-    #round-result {
-        font-size: 1.5rem;
-    } */
-
     section {
         flex-direction: column;
-    }
-    .image-container {
-        width: 10rem;
-        height: 10rem;
-    }
-
-    .image-container2 {
-        width: 10rem;
-        height: 10rem;
     }
 }
