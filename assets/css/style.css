@@ -2,12 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgb(3, 121, 29);
+    color: #fff;
 }
 body {
     /* height: 100vh; */
     width: 100%;
-    background: url('../pics-game/versus.jpg');
+    background: url('../pics-game/vs.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -26,7 +26,8 @@ header {
 header h1 {
     font-size: 4rem;
     padding-top: 0rem;
-    color: rgb(3, 121, 29);
+    /* color: rgb(3, 121, 29); */
+    color: #fff;
     width: 40%;
     margin: 0 auto;
     text-align: center;
@@ -46,6 +47,97 @@ article {
     align-items: center;
 }
 
+.start-modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.startModal-content {
+    background-color: #edf5e1;
+    opacity: 0.8;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 20%;
+}
+
+.startModal-content h4 {
+    color: rgb(3, 121, 29);
+}
+.rounds-number {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.rounds-number div {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.rounds-number div input {
+    margin-right: 0.5rem;
+    color: rgb(3, 121, 29);
+}
+
+.rounds-number div label {
+    color: rgb(3, 121, 29);
+}
+
+.rounds-number div input:hover {
+    cursor: pointer;
+}
+.game-mode {
+    margin-top: 1rem;
+}
+.game-mode p {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+.game-mode p:hover,
+.game-mode p:focus {
+    cursor: pointer;
+}
+
+.start-game {
+    display: inline-block;
+    margin: 1rem auto 0;
+    padding: 0.3rem 1.5rem;
+    cursor: pointer;
+    color: rgb(3, 121, 29);
+}
+
+/* The Close Button */
+/* .closeButton {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} */
+
 .image-container {
     width: 30rem;
     height: 30rem;
@@ -53,7 +145,7 @@ article {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 0.5rem solid rgb(0, 64, 92);
+    border: 0.5rem solid #74f84c;
     border-radius: 0.5rem;
 }
 
@@ -104,10 +196,13 @@ article p:last-of-type {
     display: flex;
     padding-top: 1rem;
     justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .select-btns img {
     width: 15%;
+    cursor: pointer;
 }
 
 .select-btns img:active {
@@ -116,10 +211,15 @@ article p:last-of-type {
     margin-top: 3px;
 }
 
+#well {
+    display: none;
+}
+
 .round-result h3,
 .round-result p {
     font-size: 3rem;
-    color: rgb(3, 121, 29);
+    /* color: rgb(3, 121, 29); */
+    color: #fff;
     font-weight: bold;
     text-align: center;
 }
@@ -130,17 +230,17 @@ article p:last-of-type {
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .message {
@@ -178,6 +278,10 @@ article p:last-of-type {
     display: none;
 }
 
+.computer-btns {
+    visibility: hidden;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -188,6 +292,19 @@ footer a {
     text-decoration: none;
     color: white;
 }
+
+.win {
+    box-shadow: 0px 0px 41px 18px rgba(7, 255, 5, 0.7);
+}
+
+.lose {
+    box-shadow: 0px 0px 41px 18px rgba(255, 10, 10, 0.7);
+}
+.tie {
+    box-shadow: 0px 0px 41px 18px rgba(87, 62, 62, 0.7);
+}
+
+/* ##### FOOTER ##### */
 
 @media only screen and (max-width: 1440px) {
     body {
@@ -201,6 +318,9 @@ footer a {
     .image-container2 {
         width: 23rem;
         height: 23rem;
+    }
+    .startModal-content {
+        width: 35%;
     }
 }
 
@@ -220,6 +340,9 @@ footer a {
         width: 18rem;
         height: 18rem;
     }
+    .startModal-content {
+        width: 45%;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -232,6 +355,9 @@ footer a {
         width: 14rem;
         height: 14rem;
     }
+    .startModal-content {
+        width: 70%;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -240,5 +366,8 @@ footer a {
     }
     section {
         flex-direction: column;
+    }
+    .startModal-content {
+        width: 90%;
     }
 }

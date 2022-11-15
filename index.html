@@ -9,18 +9,58 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="myModal" class="modal">
-            <div id="modal-content" class="message">
-                <p>Final Result</p>
-                <p id="finalres"></p>
-                <p id="restart">Restart</p>
-                <p id="exit">Exit</p>
+        <!-- The Modal -->
+        <div id="start-modal" class="start-modal">
+            <!-- Modal content -->
+            <div class="startModal-content">
+                <h4>How many rounds ?</h4>
+                <div class="rounds-number">
+                    <div>
+                        <input
+                            type="radio"
+                            name="round"
+                            id="5"
+                            onchange="displayRadioValue()"
+                        /><label for="5">5</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="round"
+                            id="10"
+                            onchange="displayRadioValue()"
+                        /><label for="10">10</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="round"
+                            id="15"
+                            onchange="displayRadioValue()"
+                        /><label for="15">15</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="round"
+                            id="20"
+                            onchange="displayRadioValue()"
+                        /><label for="20">20</label>
+                    </div>
+                </div>
+                <button
+                    id="start-game"
+                    class="start-game"
+                    disabled
+                    onclick="startRounds()"
+                >
+                    Start
+                </button>
             </div>
         </div>
         <header>
-            <h1>Game Hub</h1>
+            <h1 id="rounds-info">Rounds</h1>
             <article class="round-result">
-                <!-- <h3>VS</h3> -->
                 <p id="round-result">&nbsp;</p>
             </article>
         </header>
@@ -37,25 +77,26 @@
                             alt="paper"
                             id="paper"
                         />
+
                         <img
                             src="./assets/pics-game/rock.png"
                             alt="rock"
                             id="rock"
                         />
+
                         <img
                             src="./assets/pics-game/scissors.png"
                             alt="scissors"
                             id="scissors"
                         />
                     </div>
-
                     <p class="side">Take your pick</p>
                 </article>
                 <article>
                     <h3>COMPUTER SCORE</h3>
                     <p id="computer-score">0</p>
                     <div id="main-image2" class="image-container2"></div>
-                    <div class="select-btns">
+                    <div class="select-btns computer-btns">
                         <img
                             src="./assets/pics-game/paper.png"
                             alt="paper"
@@ -72,13 +113,10 @@
                             id="scissors"
                         />
                     </div>
-
                     <p class="side">Computer pick</p>
                 </article>
             </section>
         </main>
-        <footer>
-            <a href="https://www.vecteezy.com/" target="_blank">Vecteezy.com</a>
-        </footer>
+        <footer></footer>
     </body>
 </html>
